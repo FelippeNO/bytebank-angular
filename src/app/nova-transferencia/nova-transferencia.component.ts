@@ -8,14 +8,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class NovaTransferenciaComponent {
   @Output() aoTransferir = new EventEmitter<any>();
 
-  valor: number = 0;
-  destino: number = 0;
+  valor: any;
+  destino: any;
 
   transferir() {
-    console.log('Nova Transferência');
-    console.log(this.valor);
-    console.log(this.destino);
-    this.aoTransferir.emit({ valor: this.valor, destino: this.destino });
+    console.log('Solicitada nova transferência');
+    const valorEmitir = { valor: this.valor, destino: this.destino };
+    this.aoTransferir.emit(valorEmitir);
+
     this.limparCampos();
   }
 

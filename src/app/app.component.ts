@@ -6,13 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'bytebank-angular';
-  destino: number = 0;
-  valor: number = 0;
+  title = 'bytebank';
+  transferencia: any;
 
   transferir($event: any) {
     console.log($event);
-    this.destino = $event.destino;
-    this.valor = $event.valor;
+    this.transferencia = $event;
   }
 }
